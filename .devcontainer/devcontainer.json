@@ -2,14 +2,7 @@
   "name": "Breathe",
   "build": {
     "context": "..",
-    "dockerfile": "Dockerfile",
-    "args": {
-      // To ensure that the group ID for the docker group in the container
-      // matches the group ID on the host, add this to your .bash_profile on the host
-      // 		export DOCKER_GROUP_ID=$(getent group docker | awk -F ":" '{ print $3 }')
-      "DOCKER_GROUP_ID": "${localEnv:DOCKER_GROUP_ID}",
-      "INTERACTIVE": "true"
-    }
+    "dockerfile": "Dockerfile"
   },
   "runArgs": [
     "--network",
@@ -19,14 +12,9 @@
     // Keep command history
     "type=volume,source=breathe-bashhistory,target=/home/vscode/commandhistory",
     // Mounts the login details from the host machine to azcli works in the container
-    "type=bind,source=${env:HOME}${env:USERPROFILE}/.azure,target=/home/vscode/.azure",
-    // Mount docker socket for docker builds
-    "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock"
+    "type=bind,source=${env:HOME}${env:USERPROFILE}/.azure,target=/home/vscode/.azure"
   ],
   "remoteUser": "vscode",
-  "containerEnv": {
-    "DOCKER_BUILDKIT": "1",
-  },
   "remoteEnv": {
     // this is used for SuperLinter
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
@@ -49,7 +37,7 @@
     "launch": {
       "configurations": [
         {
-          "name": "Breathe",
+          "name": "API",
           "type": "python",
           "module": "uvicorn",
           "request": "launch",
@@ -73,7 +61,6 @@
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "ms-python.python",
-    "github.vscode-pull-request-github",
     "davidanson.vscode-markdownlint",
     "editorconfig.editorconfig",
     "github.vscode-pull-request-github",
@@ -83,7 +70,5 @@
   ],
   "forwardPorts": [
     8000
-  ],
-  // Give permission to access docker socket
-  "postCreateCommand": "sudo bash ./.devcontainer/scripts/set_docker_sock_permission.sh"
+  ]
 }

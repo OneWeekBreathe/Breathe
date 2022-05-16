@@ -17,7 +17,7 @@
   ],
   "mounts": [
     // Keep command history
-    "type=volume,source=tre-bashhistory,target=/home/vscode/commandhistory",
+    "type=volume,source=breathe-bashhistory,target=/home/vscode/commandhistory",
     // Mounts the login details from the host machine to azcli works in the container
     "type=bind,source=${env:HOME}${env:USERPROFILE}/.azure,target=/home/vscode/.azure",
     // Mount docker socket for docker builds

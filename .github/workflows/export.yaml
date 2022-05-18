@@ -9,6 +9,14 @@ jobs:
     runs-on: windows-latest   # alternate runner OS is: ubuntu-latest
 
     steps:
+
+    - name: who-am-i action
+      uses: microsoft/powerplatform-actions/who-am-i@v0
+      with:
+        environment-url: 'https://org3e35abfc.crm17.dynamics.com'
+        user-name: 'algattik@oneweekbreathe.onmicrosoft.com'
+        password-secret: ${{ secrets.password }}
+
     - name: Export Solution
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
@@ -23,3 +31,4 @@ jobs:
       with:
         name: my-artifact
         path: Breathe.zip
+        working-directory: 'out'

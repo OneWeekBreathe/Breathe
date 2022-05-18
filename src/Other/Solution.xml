@@ -78,14 +78,9 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <RootComponent type="1" schemaName="cr880_donation" behavior="0" />
       <RootComponent type="1" schemaName="cr880_researchproject" behavior="0" />
-      <RootComponent type="1" schemaName="cr880_sampledonation" behavior="0" />
     </RootComponents>
-    <MissingDependencies>
-      <MissingDependency>
-        <Required type="1" schemaName="cr880_donation" displayName="Donation" solution="Active" />
-        <Dependent type="1" schemaName="cr880_researchproject" displayName="Research Project" />
-      </MissingDependency>
-    </MissingDependencies>
+    <MissingDependencies />
   </SolutionManifest>
 </ImportExportXml>

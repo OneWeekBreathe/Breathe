@@ -7,18 +7,20 @@ on:
 jobs:
   Export:
     runs-on: windows-latest   # alternate runner OS is: ubuntu-latest
+    env:
+      RUNNER_DEBUG: 1
 
     steps:
 
     - name: who-am-i action
-      uses: microsoft/powerplatform-actions/who-am-i@v0
+      uses: microsoft/powerplatform-actions/who-am-i@0.4.0
       with:
         environment-url: 'https://org3e35abfc.crm17.dynamics.com'
         user-name: 'algattik@oneweekbreathe.onmicrosoft.com'
         password-secret: ${{ secrets.password }}
 
     - name: Export Solution
-      uses: microsoft/powerplatform-actions/export-solution@v0
+      uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
         environment-url: 'https://org3e35abfc.crm17.dynamics.com'
         user-name: 'algattik@oneweekbreathe.onmicrosoft.com'

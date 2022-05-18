@@ -40,15 +40,9 @@ jobs:
         publish-changes: true
 
     - name: 'Az CLI login'
-      uses: azure/login@v1
-      with:
-        user: ${{env.USERNAME}}
-        password: ${{ secrets.PASSWORD }}
+      run: az login -u "$USERNAME" -p "${{ secrets.PASSWORD }}" --allow-no-subscriptions
 
     - name: 'Test'
-      run: az rest --resource ${{env.BUILD_ENVIRONMENT_URL}} --url ${{env.BUILD_ENVIRONMENT_URL}}/api/data/v9.2/WhoAmI
-
-    - name: 'Test query'
       run: az rest --resource ${{env.BUILD_ENVIRONMENT_URL}} --url ${{env.BUILD_ENVIRONMENT_URL}}/api/data/v9.2/WhoAmI
 
     #TODO further actions, see https://github.com/microsoft/powerplatform-actions-lab/blob/main/sample-workflows/export-and-branch-solution.yml

@@ -1,0 +1,13 @@
+name: release-solution-to-prod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  convert-to-managed:
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+
+    steps:
+    - run: echo ok

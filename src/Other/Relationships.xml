@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_cr880_researchproject" />
+  <EntityRelationship Name="business_unit_cr880_sampledonation" />
+  <EntityRelationship Name="lk_cr880_researchproject_createdby" />
+  <EntityRelationship Name="lk_cr880_researchproject_modifiedby" />
+  <EntityRelationship Name="lk_cr880_sampledonation_createdby" />
+  <EntityRelationship Name="lk_cr880_sampledonation_modifiedby" />
+  <EntityRelationship Name="owner_cr880_researchproject" />
+  <EntityRelationship Name="owner_cr880_sampledonation" />
+  <EntityRelationship Name="team_cr880_researchproject" />
+  <EntityRelationship Name="team_cr880_sampledonation" />
+  <EntityRelationship Name="user_cr880_researchproject" />
+  <EntityRelationship Name="user_cr880_sampledonation" />
+</EntityRelationships>

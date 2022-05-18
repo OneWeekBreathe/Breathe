@@ -12,6 +12,10 @@ jobs:
 
     steps:
 
+    - uses: actions/checkout@v3
+      with:
+        lfs: true
+
     - name: who-am-i action
       uses: microsoft/powerplatform-actions/who-am-i@0.4.0
       with:
@@ -29,8 +33,18 @@ jobs:
         solution-output-file: 'Breathe.zip'
         working-directory: 'out'
 
-    - uses: actions/upload-artifact@v3
+    - name: unpack-solution action
+      uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
       with:
-        name: my-artifact
-        path: Breathe.zip
-        working-directory: 'out'
+        solution-file: 'out/Breathe.zip'
+        solution-folder: 'unpacked/Breathe'
+        solution-type: 'Unmanaged'
+        overwrite-files: true
+
+    - name: branch-solution, prepare it for a PullRequest
+      uses: microsoft/powerplatform-actions/branch-solution@0.4.0
+      with:
+        solution-folder: 'unpacked/Breathe'
+        solution-target-folder: 'src'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-empty-commit: true

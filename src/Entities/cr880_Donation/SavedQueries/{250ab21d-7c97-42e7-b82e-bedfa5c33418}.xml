@@ -6,11 +6,11 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <savedqueryid>{5266bd80-e900-4f44-ac8a-27d46bb6da14}</savedqueryid>
+    <savedqueryid>{250ab21d-7c97-42e7-b82e-bedfa5c33418}</savedqueryid>
     <layoutxml>
-      <grid name="resultset" jump="cr880_donationname" select="1" icon="1" preview="1">
-        <row name="result" id="cr880_sampledonationid">
-          <cell name="cr880_donationname" width="300" />
+      <grid name="resultset" jump="cr880_name" select="1" icon="1" preview="1">
+        <row name="result" id="cr880_donationid">
+          <cell name="cr880_name" width="300" />
           <cell name="createdon" width="125" />
         </row>
       </grid>
@@ -18,17 +18,17 @@
     <querytype>1</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical">
-        <entity name="cr880_sampledonation">
-          <attribute name="cr880_sampledonationid" />
-          <attribute name="cr880_donationname" />
+        <entity name="cr880_donation">
+          <attribute name="cr880_donationid" />
+          <attribute name="cr880_name" />
           <attribute name="createdon" />
-          <order attribute="cr880_donationname" descending="false" />
+          <order attribute="cr880_name" descending="false" />
         </entity>
       </fetch>
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Sample Donation Advanced Find View" languagecode="1033" />
+      <LocalizedName description="Donation Advanced Find View" languagecode="1033" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

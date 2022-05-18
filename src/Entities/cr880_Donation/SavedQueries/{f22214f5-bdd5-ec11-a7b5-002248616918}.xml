@@ -6,12 +6,12 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <savedqueryid>{ed6fae9c-88d6-ec11-a7b5-002248616918}</savedqueryid>
+    <savedqueryid>{f22214f5-bdd5-ec11-a7b5-002248616918}</savedqueryid>
     <querytype>8192</querytype>
     <fetchxml>
       <fetch version="1.0" mapping="logical" output-format="xml-platform">
-        <entity name="cr880_sampledonation">
-          <attribute name="cr880_sampledonationid" />
+        <entity name="cr880_donation">
+          <attribute name="cr880_donationid" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
             <condition attribute="ownerid" operator="eq-userid" />
@@ -21,10 +21,10 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="My Sample Donations" languagecode="1033" />
+      <LocalizedName description="My Donations" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Active Sample Donations owned by me" languagecode="1033" />
+      <Description description="Active Donations owned by me" languagecode="1033" />
     </Descriptions>
   </savedquery>
 </savedqueries>

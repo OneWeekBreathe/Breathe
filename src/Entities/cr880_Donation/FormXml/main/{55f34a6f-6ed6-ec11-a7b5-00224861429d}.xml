@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{55f34a6f-6ed6-ec11-a7b5-00224861429d}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{36e0c2d5-3f9d-4374-8254-49962c183bf9}" IsUserDefined="1" labelid="{4ea2e9ce-209b-4039-8b78-84eeaa70feaf}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{2910b676-a8a8-4bf8-97bb-86ee93c2288e}" labelid="{6f3373ba-242f-43ee-bd7e-ce6941a5b1ed}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7f7d8d4c-4102-4223-af20-d36f9278d349}" labelid="{a550a3c0-1d27-49ed-8874-fdfa237cf9ae}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="cr880_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr880_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{011b8b17-232d-4f01-a891-465ac22b6281}" visible="false" labelid="{0b9e721b-c0be-4007-9262-b7f26480ab8b}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{64c4b979-50a6-4a4c-ac68-9bf97ddfcbbf}" locklevel="0" colspan="1" rowspan="1" labelid="{8cbc917d-609e-4c62-91bb-2e6379ea7f6f}">
+                        <labels>
+                          <label description="Donor ID" languagecode="1033" />
+                        </labels>
+                        <control id="cr880_donorid" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr880_donorid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{941eb5e0-d689-40a4-a101-1dd218f0b407}" locklevel="0" colspan="1" rowspan="1" labelid="{e32d5176-544a-4faf-a6d3-a0be7e0bd24d}">
+                        <labels>
+                          <label description="Research Project" languagecode="1033" />
+                        </labels>
+                        <control id="cr880_researchproject" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr880_researchproject" disabled="false">
+                          <parameters>
+                            <DefaultViewId>{D3F73945-72D6-EC11-A7B5-00224861429D}</DefaultViewId>
+                            <AvailableViewIds>{59B88F5E-E6F5-4EFF-B5F2-AFCF355AD00E},{F88DE24B-5B94-44A0-82A4-C72CCD50A3B0},{A3CA2635-12E6-4666-9E07-9AF5C7598C1F},{D3F73945-72D6-EC11-A7B5-00224861429D}</AvailableViewIds>
+                            <DisableViewPicker>true</DisableViewPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0e45de4e-8640-482f-bc63-b65d63b69e8a}" locklevel="0" colspan="1" rowspan="1" labelid="{c6af2d7e-a85d-4911-ba31-247a4358069e}" visible="false">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="statecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{f6aaf4a4-869e-4988-a7db-bd106d55c95a}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{072706a7-76ea-474f-92c7-252b172b551e}" showlabel="false" labelid="{5eca9b3a-ca9f-4a98-a6fc-0c2cd2c82de2}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{4a03261e-8da2-4fb6-a28f-734ae69263d4}" showlabel="false" labelid="{03f2ba3a-147b-40fb-ae0f-881c5151462e}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{77b40d5f-0e8d-4c07-bc17-7062ec5510e9}" showlabel="false" labelid="{5db90101-0281-4ccd-b060-57bc189ed885}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{162fe813-f31e-471d-a429-f0b50d551b74}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{6352f3ca-ae2a-4ab9-8f28-e118b6af3c08}" showlabel="false" labelid="{17846123-0ce4-497f-a31e-f4393fae1c85}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ff0387ca-abba-4902-9027-586266305915}" showlabel="false" labelid="{1e5be27c-2194-47de-8c97-a701c0a680ae}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{282f922e-8fbf-4028-b9b3-e1cab7095827}" showlabel="false" labelid="{d2cc1c56-9126-47ca-9dad-51d53d2545c7}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Donation main form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

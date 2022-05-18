@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{ce814c73-6cd6-ec11-a7b5-00224861429d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr880_name" select="1" icon="1" preview="1">
+        <row name="result" id="cr880_donationid">
+          <cell name="cr880_name" width="200" />
+          <cell name="cr880_donorid" width="159" />
+          <cell name="statecode" width="133" />
+          <cell name="cr880_researchproject" width="177" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="cr880_donation">
+          <attribute name="cr880_name" />
+          <attribute name="cr880_donationid" />
+          <attribute name="cr880_donorid" />
+          <attribute name="statecode" />
+          <attribute name="cr880_researchproject" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Donation List" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

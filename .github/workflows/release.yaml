@@ -1,7 +1,9 @@
-name: release-solution-to-prod
-# prepare for releasing to prod:
-#   convert solution to managed (using a build PowerPlatform environment for the conversion)
-#   upload the solution to the GitHub artifacts and deploy to the PROD environment
+name: release-solution
+# Partial release pipeline.
+# Based on sample at https://github.com/microsoft/powerplatform-actions-lab/blob/main/sample-workflows/release-solution-to-prod.yml
+# (only deployment to the BUILD environment is implemented from this sample).
+# Also populates sample data.
+
 
 on:
   workflow_dispatch:
@@ -39,9 +41,7 @@ jobs:
         publish-changes: true
 
     - name: 'Az CLI login'
-      run: az login -u "$USERNAME" -p "${{ secrets.PASSWORD }}" --allow-no-subscriptions
+      run: az login -u "${{env.USERNAME}}" -p "${{secrets.PASSWORD}}" --allow-no-subscriptions
 
     - name: 'Populate cr880_researchprojects'
       run: az rest --resource ${{env.BUILD_ENVIRONMENT_URL}} --url ${{env.BUILD_ENVIRONMENT_URL}}/api/data/v9.2/cr880_researchprojects --method POST --body @data/cr880_researchprojects.json
-
-    #TODO further actions, see https://github.com/microsoft/powerplatform-actions-lab/blob/main/sample-workflows/export-and-branch-solution.yml

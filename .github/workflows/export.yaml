@@ -5,9 +5,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  # actions: write
+  actions: write
   checks: write
-  # contents: write
+  contents: write
   # deployments: write
   # id-token: write
   # issues: write

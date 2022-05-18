@@ -5,6 +5,9 @@ on:
 
 permissions:
   contents: write
+env:
+  DEV_ENVIRONMENT_URL: https://org3e35abfc.crm17.dynamics.com
+  USERNAME: algattik@oneweekbreathe.onmicrosoft.com
 
 jobs:
   Export:
@@ -18,18 +21,18 @@ jobs:
       with:
         lfs: true
 
-    - name: who-am-i action
+    - name: Verify username and password
       uses: microsoft/powerplatform-actions/who-am-i@0.4.0
       with:
-        environment-url: 'https://org3e35abfc.crm17.dynamics.com'
-        user-name: 'algattik@oneweekbreathe.onmicrosoft.com'
-        password-secret: ${{ secrets.password }}
+        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
+        user-name: ${{env.USERNAME}}
+        password-secret: ${{ secrets.PASSWORD }}
 
     - name: Export Solution
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
-        environment-url: 'https://org3e35abfc.crm17.dynamics.com'
-        user-name: 'algattik@oneweekbreathe.onmicrosoft.com'
+        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
+        user-name: ${{env.USERNAME}}
         password-secret: ${{ secrets.PASSWORD }}
         solution-name: Breathe
         solution-output-file: 'Breathe.zip'

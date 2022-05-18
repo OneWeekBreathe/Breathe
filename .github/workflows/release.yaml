@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
 
 env:
-#edit your values here
   BUILD_ENVIRONMENT_URL: https://orgac818224.crm17.dynamics.com
   USERNAME: algattik@oneweekbreathebuild.onmicrosoft.com
 
@@ -34,7 +33,7 @@ jobs:
       with:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         user-name: ${{env.USERNAME}}
-        password-secret: ${{ secrets.password }}
+        password-secret: ${{ secrets.PASSWORD }}
         solution-file: out/solutions/Breathe.zip
         force-overwrite: true
         publish-changes: true
@@ -42,7 +41,7 @@ jobs:
     - name: 'Az CLI login'
       run: az login -u "$USERNAME" -p "${{ secrets.PASSWORD }}" --allow-no-subscriptions
 
-    - name: 'Test'
-      run: az rest --resource ${{env.BUILD_ENVIRONMENT_URL}} --url ${{env.BUILD_ENVIRONMENT_URL}}/api/data/v9.2/WhoAmI
+    - name: 'Populate cr880_researchprojects'
+      run: az rest --resource ${{env.BUILD_ENVIRONMENT_URL}} --url ${{env.BUILD_ENVIRONMENT_URL}}/api/data/v9.2/cr880_researchprojects --method POST --body @data/cr880_researchprojects.json
 
     #TODO further actions, see https://github.com/microsoft/powerplatform-actions-lab/blob/main/sample-workflows/export-and-branch-solution.yml

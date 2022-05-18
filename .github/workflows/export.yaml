@@ -6,6 +6,8 @@ on:
 
 permissions:
   actions: write
+  repository-projects: write
+  id-token: write
 
 jobs:
   Export:

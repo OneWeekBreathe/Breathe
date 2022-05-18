@@ -1,6 +1,7 @@
 name: "Export"
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -13,7 +14,7 @@ jobs:
       with:
         environment-url: 'https://org3e35abfc.crm17.dynamics.com'
         user-name: 'algattik@oneweekbreathe.onmicrosoft.com'
-        password-secret: ${{ secrets.MYPASSWORD }}
+        password-secret: ${{ secrets.PASSWORD }}
         solution-name: aSolution
         solution-output-file: 'aSolution.zip'
         working-directory: 'out'

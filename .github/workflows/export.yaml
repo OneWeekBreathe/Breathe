@@ -5,7 +5,20 @@ on:
 
 jobs:
   Export:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest   # alternate runner OS is: ubuntu-latest
 
     steps:
-    - run: echo "Job was run."
+    - name: Export Solution
+      uses: microsoft/powerplatform-actions/export-solution@v0
+      with:
+        environment-url: 'https://org3e35abfc.crm17.dynamics.com'
+        user-name: 'algattik@oneweekbreathe.onmicrosoft.com'
+        password-secret: ${{ secrets.MYPASSWORD }}
+        solution-name: aSolution
+        solution-output-file: 'aSolution.zip'
+        working-directory: 'out'
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: aSolution.zip

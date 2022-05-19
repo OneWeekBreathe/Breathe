@@ -8,6 +8,8 @@ For Microsoft FTEs, provision a [Dynamics 365 Enterprise P1 Trial Instance](http
 
 Take note of the instance URL, admin username and password. Configure the password as a GitHub repository secret named `PASSWORD`.
 
+For a more complete CI setup, you should create two instances, one for development (manually updated), and one for the CI build that is automatically provisioned. Use the same password in both instances.
+
 ### Deploying the solution
 
 Adapt the values under `env` in [deploy.yaml](`.github/workflowsdeploy.yaml`) to your environment. From the GitHub Actions tab, run the `Deploy solution` workflow.

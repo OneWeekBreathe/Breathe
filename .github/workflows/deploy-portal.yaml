@@ -1,0 +1,30 @@
+name: "Deploy portal"
+
+on:
+  push:
+
+permissions:
+  contents: write
+env:
+  DEV_ENVIRONMENT_URL: https://org3e35abfc.crm17.dynamics.com
+  USERNAME: algattik@oneweekbreathe.onmicrosoft.com
+  # id (not appId) of the website in Power Apps Portal Management
+  WEBSITE_ID: 59fbbe2f-ebd5-ec11-a7b5-00224861429d
+
+jobs:
+  Export:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+
+    - name: Upload portal
+      uses: microsoft/powerplatform-actions/upload-paportal@0.6.3
+      with:
+        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
+        user-name: ${{env.USERNAME}}
+        password-secret: ${{ secrets.PASSWORD }}
+        upload-path: 'portal-src'
+        working-directory: 'out'

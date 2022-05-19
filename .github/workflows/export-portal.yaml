@@ -2,7 +2,7 @@ name: "Export portal"
 #Based on sample at https://github.com/microsoft/powerplatform-actions-lab/blob/main/sample-workflows/export-and-branch-solution.yml
 
 on:
-  push:
+  workflow_dispatch:
 
 permissions:
   contents: write

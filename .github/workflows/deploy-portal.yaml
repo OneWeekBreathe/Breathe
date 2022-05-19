@@ -24,5 +24,5 @@ jobs:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         user-name: ${{env.USERNAME}}
         password-secret: ${{ secrets.PASSWORD }}
-        upload-path: 'portal-src'
+        upload-path: 'portal-src/breatheapp---breatheapp'
         working-directory: 'out'

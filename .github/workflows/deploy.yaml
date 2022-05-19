@@ -1,0 +1,17 @@
+name: "Deploy solution"
+
+on:
+  workflow_dispatch:
+
+env:
+  BUILD_ENVIRONMENT_URL: https://orgac818224.crm17.dynamics.com
+  USERNAME: algattik@oneweekbreathebuild.onmicrosoft.com
+
+jobs:
+  import:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true

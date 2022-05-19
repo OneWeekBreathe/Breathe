@@ -1,0 +1,15 @@
+- adx_name: Grant Change to Administrators
+  adx_right: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: 29fbbe2f-ebd5-ec11-a7b5-00224861429d
+  adx_webpageid: 17fbbe2f-ebd5-ec11-a7b5-00224861429d
+- adx_name: Grant Change to Content
+  adx_right: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: 2afbbe2f-ebd5-ec11-a7b5-00224861429d
+- adx_name: Restrict Read on Enter Donations
+  adx_right: 2
+  adx_webpageaccesscontrolrule_webrole:
+  - 2cfbbe2f-ebd5-ec11-a7b5-00224861429d
+  adx_webpageaccesscontrolruleid: 9cd4c2f6-50d7-ec11-a7b5-002248133f6b
+  adx_webpageid: 20fbbe2f-ebd5-ec11-a7b5-00224861429d

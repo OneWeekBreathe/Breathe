@@ -12,11 +12,13 @@ For a more complete CI setup, you should create two instances, one for developme
 
 ### Deploying the solution
 
-Adapt the values under `env` in [deploy.yaml](`.github/workflowsdeploy.yaml`) to your environment. From the GitHub Actions tab, run the `Deploy solution` workflow.
+Adapt the values under `env` in [deploy.yaml](`.github/workflows/deploy.yaml`) to your environment. From the GitHub Actions tab, run the `Deploy solution` workflow.
 
 This sets up the solution based on the assets in the `src` directory, and populates data using the Postman collection in the `data` directory.
 
 ### Exporting the solution
+
+Adapt the values under `env` in [export.yaml](`.github/workflows/export.yaml`) to your environment.
 
 After performing manual changes to the solution in Power Apps, run the `Export solution` workflow from the GitHub Actions tab to prepare a pull request to update the solution files in the  `src` folder on the `main` branch.
 
@@ -31,6 +33,18 @@ create-solution-pr:
 ```
 
 Create a pull request from that branch.
+
+### Deploying the portal
+
+Similarly to deploying the solution, adapt the values under `env` in [deploy-portal.yaml](`.github/workflows/deploy-portal.yaml`) to your environment and run it.
+
+Before the first deployment, you will need to manually create any portal app, or you will see the error:
+
+`Error: Portal entities are not available on this org, please install portal package on the org.`
+
+### Exporting the portal
+
+Similarly to exporting the solution, adapt the values under `env` in [export-portal.yaml](`.github/workflows/export-portal.yaml`) to your environment and run it, then create a pull request from the resulting branch.
 
 ## Using Postman
 

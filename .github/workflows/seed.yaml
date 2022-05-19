@@ -1,0 +1,34 @@
+name: "Deploy solution"
+# Partial release pipeline.
+# Based on sample at https://github.com/microsoft/powerplatform-actions-lab/blob/main/sample-workflows/release-solution-to-prod.yml
+# (only deployment to the BUILD environment is implemented from this sample).
+# Also populates sample data.
+
+on:
+  push:
+
+env:
+  BUILD_ENVIRONMENT_URL: https://orgac818224.crm17.dynamics.com
+  USERNAME: algattik@oneweekbreathebuild.onmicrosoft.com
+
+jobs:
+
+  seed:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Az CLI login'
+      run: az login -u "${{env.USERNAME}}" -p "${{secrets.PASSWORD}}" --allow-no-subscriptions
+
+    - name: 'Install newman'
+      run: npm install -g newman
+
+    - name: 'Run newman'
+      run: >
+        token=$(az account get-access-token --resource ${{env.BUILD_ENVIRONMENT_URL}} --query accessToken -o tsv)
+        newman run
+          --folder "Seed Data"
+          --environment data/Breathe.postman_environment.json 
+          --env-var token="$token"
+          --env-var url="${{env.BUILD_ENVIRONMENT_URL}}"
+          data/Breathe.postman_collection.json

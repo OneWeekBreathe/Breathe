@@ -6,10 +6,8 @@ on:
 permissions:
   contents: write
 env:
-  DEV_ENVIRONMENT_URL: https://org3e35abfc.crm17.dynamics.com
-  USERNAME: algattik@oneweekbreathe.onmicrosoft.com
-  # id (not appId) of the website in Power Apps Portal Management
-  WEBSITE_ID: 59fbbe2f-ebd5-ec11-a7b5-00224861429d
+  BUILD_ENVIRONMENT_URL: https://orgac818224.crm17.dynamics.com
+  USERNAME: algattik@oneweekbreathebuild.onmicrosoft.com
 
 jobs:
   Export:

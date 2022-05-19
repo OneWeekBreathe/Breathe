@@ -24,11 +24,11 @@ jobs:
       run: npm install -g newman
 
     - name: 'Run newman'
-      run: >
+      run: |
         token=$(az account get-access-token --resource ${{env.BUILD_ENVIRONMENT_URL}} --query accessToken -o tsv)
-        newman run
-          --folder "Seed Data"
-          --environment data/Breathe.postman_environment.json 
-          --env-var token="$token"
-          --env-var url="${{env.BUILD_ENVIRONMENT_URL}}"
+        newman run \
+          --folder "Seed Data" \
+          --environment data/Breathe.postman_environment.json  \
+          --env-var token="$token" \
+          --env-var url="${{env.BUILD_ENVIRONMENT_URL}}" \
           data/Breathe.postman_collection.json

@@ -9,6 +9,7 @@ permissions:
 env:
   DEV_ENVIRONMENT_URL: https://org3e35abfc.crm17.dynamics.com
   USERNAME: algattik@oneweekbreathe.onmicrosoft.com
+  APP_ID: 59fbbe2f-ebd5-ec11-a7b5-00224861429d
 
 jobs:
   Export:
@@ -23,7 +24,7 @@ jobs:
         user-name: ${{env.USERNAME}}
         password-secret: ${{ secrets.PASSWORD }}
         download-path: downloaded
-        website-id: 351dec69-e8d5-ec11-a7b5-002248616918
+        website-id: ${{env.APP_ID}}
         working-directory: 'out'
 
     - name: branch-solution, prepare it for a PullRequest

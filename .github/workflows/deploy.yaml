@@ -50,7 +50,7 @@ jobs:
 
     - name: 'Run newman'
       run: >
-        token=$(az account get-access-token --resource ${{env.BUILD_ENVIRONMENT_URL}} --query accessToken -o tsv)
+        token=$(az account get-access-token --resource ${{env.BUILD_ENVIRONMENT_URL}} --query accessToken -o tsv);
         newman run
           --folder "Seed Data"
           --environment data/Breathe.postman_environment.json 

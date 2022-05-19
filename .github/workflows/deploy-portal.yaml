@@ -1,0 +1,28 @@
+name: "Deploy portal"
+
+on:
+  push:
+
+permissions:
+  contents: write
+env:
+  BUILD_ENVIRONMENT_URL: https://orgac818224.crm17.dynamics.com
+  USERNAME: algattik@oneweekbreathebuild.onmicrosoft.com
+
+jobs:
+  import:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+
+    - name: Upload portal
+      uses: microsoft/powerplatform-actions/upload-paportal@0.6.3
+      with:
+        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
+        user-name: ${{env.USERNAME}}
+        password-secret: ${{ secrets.PASSWORD }}
+        upload-path: 'portal-src/breatheapp---breatheapp'
+        working-directory: 'out'

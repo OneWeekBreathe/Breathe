@@ -1,0 +1,37 @@
+name: "Temp"
+#Based on sample at https://github.com/microsoft/powerplatform-actions-lab/blob/main/sample-workflows/export-and-branch-solution.yml
+
+on:
+  push:
+
+permissions:
+  contents: write
+env:
+  DEV_ENVIRONMENT_URL: https://org3e35abfc.crm17.dynamics.com
+  USERNAME: algattik@oneweekbreathe.onmicrosoft.com
+
+jobs:
+  Export:
+    runs-on: windows-latest
+
+    steps:
+
+    - name: Download portal
+      uses: microsoft/powerplatform-actions/download-paportal@0.4.0
+      with:
+        environment-url: ${{env.DEV_ENVIRONMENT_URL}}
+        user-name: ${{env.USERNAME}}
+        password-secret: ${{ secrets.PASSWORD }}
+        download-path: downloaded
+        website-id: BreatheApp
+        working-directory: 'out'
+
+    - name: branch-solution, prepare it for a PullRequest
+      uses: microsoft/powerplatform-actions/branch-solution@0.4.0
+      with:
+        solution-folder: 'downloaded'
+        solution-target-folder: 'portal-src'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-empty-commit: true
+
+

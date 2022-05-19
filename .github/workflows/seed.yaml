@@ -17,6 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+
     - name: 'Az CLI login'
       run: az login -u "${{env.USERNAME}}" -p "${{secrets.PASSWORD}}" --allow-no-subscriptions
 

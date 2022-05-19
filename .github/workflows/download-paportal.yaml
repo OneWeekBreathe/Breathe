@@ -17,7 +17,7 @@ jobs:
     steps:
 
     - name: Download portal
-      uses: microsoft/powerplatform-actions/download-paportal@0.4.0
+      uses: microsoft/powerplatform-actions/download-paportal@0.6.3
       with:
         environment-url: ${{env.DEV_ENVIRONMENT_URL}}
         user-name: ${{env.USERNAME}}
